@@ -689,14 +689,14 @@
 
               button {
                 // 🔥 기본 버튼 스타일 제거
-                background: none;
-                border: none;
-                outline: none;
-                padding: 0;
-                font: inherit;
-                color: inherit;
-                cursor: pointer;
-                -webkit-tap-highlight-color: transparent;
+                background: #000;
+                // border: none;
+                // outline: none;
+                // padding: 0;
+                // font: inherit;
+                // color: inherit;
+                // cursor: pointer;
+                // -webkit-tap-highlight-color: transparent;
 
                 display: flex;
                 flex-direction: column;
