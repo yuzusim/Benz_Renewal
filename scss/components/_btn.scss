@@ -45,7 +45,9 @@
   background: linear-gradient(120deg, #56dbac, #00ffff, #000, #ffffff, #56dbac);
   background-size: 300% 300%;
   animation: borderFlow 4s linear infinite;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: 0;
@@ -96,7 +98,7 @@
 @include mix.respond(mobile) {
   .more_btn a {
     padding: 14px 100px;
-    bottom: 450px;
+    bottom: 350px;
   }
 
   // history btn

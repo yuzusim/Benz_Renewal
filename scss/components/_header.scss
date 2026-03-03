@@ -42,14 +42,16 @@
     ul {
       display: flex;
       align-items: center;
-      gap: 50px;
+      _gap: 50px;
 
       li {
         _color: var.$color-secondary;
         _opacity: 0.8;
         // color: var.$color-primary;
         align-items: center;
-        transition: opacity 0.3s ease, color 0.3s ease;
+        transition:
+          opacity 0.3s ease,
+          color 0.3s ease;
         margin-left: 50px;
         // color: rgba(255, 255, 255, 0.8);
 

@@ -362,7 +362,8 @@ h6 {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /*썸네일 비주얼*/
@@ -388,7 +389,8 @@ h6 {
 .thumbsWrap .swiper-slide {
   width: 150px !important;
   height: 100px;
-  _object-fit: cover;
+  _-o-object-fit: cover;
+  _   object-fit: cover;
   transition: filter 0.3s ease;
 }
 
@@ -621,7 +623,9 @@ h6 {
   height: 72px;
   border-radius: 50%;
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   pointer-events: none;
   z-index: 99999999999;
   color: #222;
@@ -1007,7 +1011,8 @@ h6 {
 .container .sec04 .model-top .slide-area .model-slider .swiper-slide .img-area .imgwrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: 11;
 }
 .container .sec04 .model-top .slide-area .model-slider .swiper-slide .text-box {
@@ -1209,4 +1214,4 @@ h6 {
     font-size: 18px;
     display: none;
   }
-}
+}/*# sourceMappingURL=main.css.map */
