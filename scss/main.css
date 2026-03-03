@@ -35,7 +35,8 @@ ul {
   list-style: none;
 }
 
-a {
+a,
+button {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -1097,11 +1098,6 @@ h6 {
   .container .sec04 .model-top .slide-area .modeList li {
     width: auto !important;
     margin-right: 40px !important;
-  }
-  .container .sec04 .model-top .slide-area .modeList li button:focus,
-  .container .sec04 .model-top .slide-area .modeList li button:active {
-    outline: none;
-    background: none;
   }
   .container .sec04 .model-top .slide-area .modeList li button {
     background: #000;
