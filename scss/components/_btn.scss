@@ -1,0 +1,106 @@
+// 헤더 컴포넌트 스타일
+@use "../base/variables" as var; // variables를 불러오고 var라는 네임스페이스 지정
+@use "../base/mixins" as mix;
+
+/* 버튼 기본 스타일 */
+.more_btn a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 40px;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  font-family: "DM Serif Display", serif;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 100px;
+  // background: #000;
+  overflow: hidden;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+// main btn
+.main_btn a {
+  bottom: 350px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 14px 80px;
+}
+
+// history btn
+.history_btn a {
+  bottom: 0;
+  background: #000;
+}
+
+/* 움직이는 테두리 효과 */
+.more_btn a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px; /* 테두리 두께 */
+  background: linear-gradient(120deg, #56dbac, #00ffff, #000, #ffffff, #56dbac);
+  background-size: 300% 300%;
+  animation: borderFlow 4s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 0;
+}
+
+/* Hover 시 살짝 떠오르기 */
+// .history a:hover {
+//   transform: translateY(-4px);
+// }
+
+/* 내부 Fill (검정 배경) */
+.more_btn a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent !important;
+  // background: transparent !important;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.history a::after {
+  background: #000;
+}
+
+/* 애니메이션 정의 */
+@keyframes borderFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// 1200px
+@include mix.respond(desktop-md) {
+}
+
+// 1024px
+@include mix.respond(tablet) {
+}
+
+// 767px
+@include mix.respond(mobile) {
+  .more_btn a {
+    padding: 14px 100px;
+    bottom: 450px;
+  }
+
+  // history btn
+  .history_btn a {
+    bottom: 0;
+  }
+}

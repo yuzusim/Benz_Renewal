@@ -1,0 +1,129 @@
+// 헤더 컴포넌트 스타일
+@use "../base/variables" as var; // variables를 불러오고 var라는 네임스페이스 지정
+@use "../base/mixins" as mix;
+
+#footer {
+  padding: 100px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 17px;
+}
+
+.ft_menu {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  text-align: start;
+}
+
+.ft_menu ul li:hover {
+  transition: all 0.5s ease;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.title_menu {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 22px;
+}
+
+.ft_menu li {
+  line-height: 2em;
+}
+
+.f_bar {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 50px 0;
+}
+
+.info_txt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info_txt li::after {
+  width: 1px;
+  height: 20px;
+  content: "|";
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.info_txt li:last-child::after {
+  display: none;
+}
+
+// .policy {
+//   display: grid;
+//   grid-template-columns: repeat(7, 1fr);
+//   border: 1px solid rgba(255, 255, 255, 0.2);
+// }
+
+.policy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.policy li:hover {
+  transition: all 0.5s ease;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.policy li::after {
+  width: 1px;
+  height: 20px;
+  content: "|";
+  display: inline-block;
+  margin: 0 50px;
+}
+
+.policy li:last-child::after {
+  display: none;
+}
+
+.f_logo {
+  margin: 0 auto;
+  width: 150px;
+  height: 110px;
+  display: block;
+  background: url(../images/f_logo.png) no-repeat;
+  background-size: cover;
+}
+
+// 1200px
+@include mix.respond(desktop-md) {
+}
+
+// 1024px
+@include mix.respond(tablet) {
+  #footer {
+    padding: 100px 20px;
+  }
+  .ft_menu {
+    display: none;
+  }
+  .f_bar {
+    display: none;
+  }
+  .info_txt {
+    flex-flow: column;
+  }
+  .info_txt li::after {
+    display: none;
+  }
+}
+
+// 767px
+@include mix.respond(mobile) {
+  .policy {
+    flex-flow: column;
+    margin-bottom: 50px !important;
+  }
+  .policy li {
+    line-height: 2em;
+  }
+  .policy li::after {
+    display: none;
+  }
+}

@@ -1,0 +1,867 @@
+// 헤더 컴포넌트 스타일
+@use "../base/variables" as var; // variables를 불러오고 var라는 네임스페이스 지정
+@use "../base/mixins" as mix;
+
+.container {
+  // 공통
+  .title {
+    font-family: "Roboto Slab";
+    font-weight: 300;
+    text-align: center;
+
+    h2 {
+      font-weight: 300;
+      font-size: 90px;
+      z-index: 999;
+      margin: 0;
+    }
+
+    p {
+      font-size: 60px;
+      margin: 0;
+    }
+  }
+  .sub_title {
+    p {
+      font-size: 24px;
+    }
+  }
+
+  // .sec03 .title {
+  //   font-family: "sans-serif" !important;
+  //   font-weight: 500;
+  // }
+
+  .sec02,
+  .sec03,
+  .sec04,
+  .sec05 {
+    width: 100%;
+    height: 100vh;
+    padding: 150px 0 150px;
+  }
+
+  // 767px
+  @include mix.respond(mobile) {
+    // 공통
+    .title {
+      h2 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 22px;
+      }
+    }
+    .sub_title {
+      p {
+        font-size: 18px;
+        word-break: keep-all;
+
+        br {
+          display: none;
+        }
+      }
+    }
+
+    .sec02 {
+      // width: 100%;
+      height: auto;
+      padding: 150px 10px 50px;
+    }
+    .sec03 {
+      padding: 100px 10px 100px;
+    }
+  }
+
+  // sec01 메인 비주얼
+  .sec01 {
+    height: 100vh;
+    width: 100%;
+
+    .mv_title {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 40%;
+      left: 50%;
+      width: 100%;
+
+      p {
+        font-size: 96px;
+        text-align: center;
+        line-height: 1.2em;
+        text-align: center;
+        font-weight: 300;
+      }
+    }
+
+    // 1200px
+    @include mix.respond(desktop-md) {
+    }
+
+    // 1024px
+    @include mix.respond(tablet) {
+    }
+
+    // 767px
+    @include mix.respond(mobile) {
+      // 메인 비주얼
+      .mv_title p {
+        font-size: 28px;
+      }
+
+      .mv_title p br {
+        display: none;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none !important;
+      }
+
+      // 썸네일 비주얼
+      .thumbSwiper {
+        display: none;
+      }
+    }
+  }
+
+  // sec02 히스토리
+  .sec02 {
+    .title,
+    .circle_logo,
+    .sub_title {
+      opacity: 0;
+      transform: translateY(50px);
+      z-index: 10;
+      position: relative;
+    }
+
+    .circle_box {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+
+      .circle_area {
+        position: absolute;
+        top: 32%;
+        left: 49.6%;
+        // top: 30%;
+        // left: 49%;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        border: 1px dotted #fff;
+
+        transform: translate(-50%, -50%);
+        animation: rotateArea 5s linear infinite;
+        transform-origin: center center;
+
+        // 로고 - 반대 방향 회전
+        &::after {
+          content: "";
+          position: absolute;
+          top: -25px;
+          left: 50%;
+          width: 50px;
+          height: 50px;
+          background: url("../images/Benz_logo.png") center/cover no-repeat;
+
+          background-color: #000;
+          border-radius: 50%;
+          z-index: 99999;
+        }
+
+        .circle_logo {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 450px;
+          height: 450px;
+          background: url("../images/circle_logo.png") center center no-repeat;
+          background-size: cover;
+          transform: translate(-50%, -50%);
+          animation: rotateLogo 5s linear infinite reverse; /* 반대 방향 회전 */
+        }
+      }
+    }
+
+    // 1200px
+    @include mix.respond(desktop-md) {
+    }
+
+    // 1024px
+    @include mix.respond(tablet) {
+    }
+
+    // 767px
+    @include mix.respond(mobile) {
+      // sec02 히스토리
+      .circle_box {
+        width: auto;
+        height: auto;
+
+        .circle_area {
+          width: 400px;
+          height: 400px;
+          left: 50%;
+
+          .circle_logo {
+            width: 350px;
+            height: 350px;
+          }
+        }
+      }
+    }
+  }
+
+  // 키프레임
+  @keyframes rotateArea {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  @keyframes rotateLogo {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  // sec03 히스토리 슬라이더
+  .sec03 {
+    height: auto !important;
+    margin: 0 auto;
+
+    .title {
+      font-family: "sans-serif" !important;
+      font-weight: 500;
+    }
+
+    .sub_title {
+      margin-top: 50px;
+    }
+
+    // history slider 영역
+    .history_slider {
+      overflow: hidden;
+
+      .historySlider {
+        margin: 0 auto 100px;
+        height: 300px;
+
+        .swiper-wrapper {
+          transform: translateY(-50%) !important;
+          margin: 18% auto 0 !important;
+          height: auto !important;
+          top: 0;
+        }
+
+        .swiper-slide {
+          position: relative;
+          // width: 700px;
+          height: 470px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 18px;
+          font-size: 22px;
+          font-weight: bold;
+          color: #fff;
+          transition: transform 0.5s;
+          background: center center / cover no-repeat;
+        }
+
+        // 중앙 슬라이드
+        .swiper-slide-active {
+          transform: scale(1);
+          z-index: 10;
+        }
+
+        // 양쪽 슬라이드
+        .swiper-slide-prev,
+        .swiper-slide-next {
+          transform: scale(0.8);
+          // z-index: 1;
+        }
+
+        // 그 외 슬라이드 (옵션)
+        .swiper-slide-prev-prev,
+        .swiper-slide-next-next {
+          transform: scale(0.7);
+        }
+
+        // 텍스트/연도 투명도
+        .year {
+          transition: opacity 0.3s;
+
+          &.on {
+            opacity: 1;
+          }
+        }
+
+        .history_txt {
+          position: relative;
+
+          h2 {
+            margin: 0 0 220px;
+            font-size: 70px;
+            font-weight: 300;
+          }
+
+          p {
+            font-size: 24px;
+            font-weight: 300;
+          }
+
+          .afterText {
+            width: 100%;
+            position: absolute;
+            bottom: -150px;
+            left: 0;
+            font-size: 22px;
+            color: #fff;
+            opacity: 0.8;
+            text-align: center;
+            pointer-events: none;
+          }
+
+          .beforeIcon {
+            position: absolute;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #000;
+            border-radius: 50%;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+    .history_btn {
+      text-align: center;
+    }
+
+    // 1200px
+    @include mix.respond(desktop-md) {
+    }
+
+    // 1024px
+    @include mix.respond(tablet) {
+    }
+
+    // 767px
+    @include mix.respond(mobile) {
+      // history slider 영역
+      .history_slider {
+        width: auto !important;
+        .historySlider {
+          margin: 150px auto 150px;
+          height: 150px;
+
+          .swiper-wrapper {
+            // margin: 10% auto 0 -10px !important;
+            // margin: 10% auto 0 -10px !important;
+            // left: 48%;
+            // transform: translate(-50%, -50%) !important;
+          }
+
+          .swiper-slide {
+            // position: relative;
+            // height: auto;
+            // display: flex
+            // align-items: center;
+            // justify-content: center;
+            // border-radius: 18px;
+            // font-size: 22px;
+            // font-weight: bold;
+            // color: #fff;
+            // transition: transform 0.5s;
+            // background: center center / cover no-repeat;
+            // overflow: hidden;
+            // width: auto !important;
+            width: 150px !important;
+            height: 140px;
+          }
+
+          // 중앙 슬라이드
+          .swiper-slide-active {
+          }
+
+          // 양쪽 슬라이드
+          .swiper-slide-prev,
+          .swiper-slide-next {
+          }
+
+          // 그 외 슬라이드 (옵션)
+          .swiper-slide-prev-prev,
+          .swiper-slide-next-next {
+          }
+
+          // 텍스트/연도 투명도
+          .year {
+            &.on {
+            }
+          }
+
+          .history_txt {
+            h2 {
+              margin: 0 0 50px;
+              font-size: 24px;
+            }
+
+            p {
+              font-size: 18px;
+            }
+
+            .afterText {
+              // content: "Benz 50’s";
+              // position: absolute;
+              // bottom: -30%;
+              // left: 30%;
+              font-size: 18px;
+              // color: #fff;
+              // opacity: 0.8;
+              // text-align: center;
+            }
+
+            .beforeIcon {
+              left: 40%;
+              width: 30px;
+              height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // sec04 Our Models
+  .sec04 {
+    background-color: #fff;
+    color: #000;
+    height: auto !important;
+    padding: 100px 0 0;
+
+    .model-top {
+      position: relative;
+
+      h2 {
+        text-align: left !important;
+        padding: 100px 100px 0;
+      }
+
+      .slide-area {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 100px;
+
+        // 탭 버튼 영역
+        .modeList {
+          text-align: left;
+          width: 200px;
+
+          li {
+            margin-bottom: 24px;
+            position: relative;
+
+            &:last-child button {
+              text-align: left;
+            }
+
+            &.on {
+              button {
+                opacity: 1;
+                font-size: 24px;
+                font-weight: 500;
+                border: none;
+                cursor: pointer;
+              }
+            }
+
+            button {
+              display: flex;
+              opacity: 0.5;
+              font-size: 20px;
+              transition: all 300ms ease;
+              border: none;
+              background-color: transparent;
+
+              img {
+                position: relative;
+                // display: inline-block;
+                margin-right: 60px;
+                width: 60px;
+                height: 40px;
+              }
+
+              span::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 80px;
+                width: 20px;
+                height: 1px;
+                background: #0d0d0d;
+                opacity: 0.7;
+              }
+            }
+          }
+        }
+
+        // 모델 이미지 슬라이더
+        .model-slider {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+
+          .swiper-slide {
+            display: flex !important;
+            justify-content: center;
+
+            .img-area {
+              width: 650px;
+              height: 650px;
+              z-index: 11;
+              margin-right: 100px;
+              // _filter: drop-shadow(0 4rem 7rem rgba(4, 4, 4, 0.25));
+              // filter: drop-shadow(0 4rem 7rem rgba(4, 4, 4, 0.25));
+
+              .imgwrap {
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  z-index: 11;
+                }
+              }
+            }
+
+            // 모델 설명 텍스트
+            .text-box {
+              text-align: start;
+
+              dl {
+                margin-bottom: 30px;
+
+                &.bigTitle {
+                  display: flex;
+                  align-items: center;
+                  font-size: 68px;
+
+                  dd {
+                    margin: 0 30px 10px;
+                    font-size: 32px;
+                  }
+                }
+              }
+
+              .big {
+                font-size: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 링크 클릭 탭
+    .model-bottom {
+      height: auto;
+      background-color: #000;
+      padding: 50px;
+
+      .model-custom {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        color: #fff;
+        text-align: start;
+
+        h2 {
+          padding: 0;
+          font-size: 22px;
+          color: rgba(255, 255, 255, 0.9);
+        }
+
+        p {
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 18px;
+          margin-top: 20px;
+        }
+
+        > div {
+          border: 1px solid rgba(255, 255, 255, 0.6);
+          border-radius: 10px;
+          padding: 20px;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: all 0.5s ease;
+          }
+
+          .icon {
+            &::before {
+              width: 20px;
+              height: 20px;
+              content: "";
+              display: inline-block;
+              margin-right: 20px;
+            }
+
+            &.icon_1::before {
+              background: url(../images/Service.png) no-repeat;
+            }
+            &.icon_2::before {
+              background: url(../images/cart.png) no-repeat;
+            }
+            &.icon_3::before {
+              background: url(../images/community.png) no-repeat;
+            }
+            &.icon_4::before {
+              background: url(../images/coin.png) no-repeat;
+            }
+          }
+        }
+      }
+    }
+
+    // 1200px
+    @include mix.respond(desktop-md) {
+    }
+
+    // 1024px
+    @include mix.respond(tablet) {
+    }
+
+    // 767px
+    @include mix.respond(mobile) {
+      .model-top {
+        h2 {
+          padding: 100px 24px 0;
+        }
+
+        .slide-area {
+          padding: 50px 30px;
+          // flex-flow: column;
+          display: block;
+
+          // 탭 버튼 영역
+          .modeList {
+            width: auto !important;
+
+            li {
+              width: auto !important;
+              margin-right: 40px !important;
+
+              &:last-child button {
+                // text-align: left;
+              }
+
+              &.on {
+                button {
+                  // opacity: 1;
+                  // font-size: 24px;
+                  // font-weight: 500;
+                  // border: none;
+                  // cursor: pointer;
+                }
+              }
+
+              button {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* ← 가운데 정렬 핵심 */
+                justify-content: center;
+                text-align: center; /* span 텍스트 중앙 */
+                width: 100%;
+
+                img {
+                  display: none;
+                }
+
+                span::after {
+                  display: none;
+                }
+              }
+            }
+          }
+
+          // 모델 이미지 슬라이더
+          .model-slider {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            .swiper-slide {
+              flex-flow: column;
+
+              .img-area {
+                width: 400px;
+                height: 400px;
+                margin-right: 0;
+
+                .imgwrap {
+                  img {
+                    // width: 400px;
+                    // height: 400px;
+                    // object-fit: cover;
+                    // z-index: 11;
+                  }
+                }
+              }
+
+              // 모델 설명 텍스트
+              .text-box {
+                dl {
+                  margin-bottom: 30px;
+
+                  &.bigTitle {
+                    font-size: 42px;
+
+                    dd {
+                      margin: 0 20px 10px;
+                      font-size: 24px;
+                    }
+                  }
+                }
+
+                .big {
+                  font-size: 24px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // 링크 클릭 탭
+      .model-bottom {
+        // height: auto;
+        // background-color: #000;
+        padding: 50px 24px;
+
+        .model-custom {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    }
+  }
+
+  // sec05 Services
+  .sec05 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("../images/sec_bg_5.jpg") no-repeat 50% 50% fixed;
+
+    .title {
+      h2 {
+        font-size: 98px;
+        font-weight: 700;
+        background: linear-gradient(
+          180deg,
+          #dcdcdc,
+          #a9a9a9,
+          #fff,
+          #a9a9a9,
+          #808080
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+        margin: 30px 0;
+      }
+    }
+
+    .ServiceWrap {
+      display: flex;
+      justify-content: center;
+      // align-items: center;
+      // vertical-align: middle;
+
+      .link_box {
+        width: 500px;
+        padding: 50px 0;
+        background-color: rgba(255, 255, 255, 0.5);
+        color: #000;
+        border-radius: 15px;
+        text-align: center;
+        margin: 50px;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+      p {
+        font-size: 20px;
+      }
+
+      .link_btn {
+        width: 300px;
+        border-radius: 10px;
+        border: 1px solid #fff;
+        padding: 10px 30px;
+        margin: 0 auto;
+      }
+
+      .link_btn:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: all 0.5s ease;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+    }
+
+    // 1200px
+    @include mix.respond(desktop-md) {
+    }
+
+    // 1024px
+    @include mix.respond(tablet) {
+    }
+
+    // 767px
+    @include mix.respond(mobile) {
+      .title {
+        h2 {
+          font-size: 52px;
+          margin: 0 0 30px;
+        }
+      }
+
+      .ServiceWrap {
+        flex-flow: column;
+
+        .link_box {
+          width: auto;
+          padding: 30px 0;
+          margin: 30px;
+        }
+
+        h2 {
+          font-size: 28px;
+          margin-bottom: 30px !important;
+        }
+        p {
+          font-size: 18px;
+          display: none;
+        }
+      }
+    }
+  }
+}

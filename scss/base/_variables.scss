@@ -1,0 +1,31 @@
+// 컬러
+$color-primary: #333;
+$color-secondary: #fff;
+$background-color-white: #fff;
+
+// 폰트
+$font-base: "Roboto Slab", sans-serif;
+
+// 메뉴 토글
+$menu-width: 100%;
+$menu-height: 1000vh;
+$menu-bg: #fff;
+$menu-font: 22px;
+$menu-color: #717171;
+$menu-hover-color: #fb9098;
+$hamburger-size: 40px;
+$hamburger-height: 3px;
+$hamburger-gap: 4px;
+$hamburger-bg: #fff;
+$hamburger-bg-active: #5b5b5b;
+$transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+
+// 브레이크포인트 (데스크탑 퍼스트)
+$bp-mobile-s: 500px;
+$bp-mobile: 767px;
+$bp-tablet: 1024px;
+$bp-desktop-md: 1200px;
+$bp-desktop-lg: 1440px;
+$bp-desktop-xl: 1600px;
+$bp-desktop-xxl: 1800px;
+$bp-desktop-4k: 1920px;

@@ -1,0 +1,14 @@
+@use "base/variables" as *;
+@use "base/mixins" as *;
+@use "base/base";
+
+@use "components/header";
+@use "components/footer";
+
+@use "components/font";
+@use "components/swiper";
+@use "components/menu";
+@use "components/btn";
+@use "components/drag";
+
+@use "pages/main";

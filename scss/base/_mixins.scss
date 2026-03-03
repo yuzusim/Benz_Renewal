@@ -1,0 +1,38 @@
+@use "variables" as var;
+
+// breakpoint mixin
+@mixin respond($breakpoint) {
+  @if $breakpoint == mobile-s {
+    @media (max-width: var.$bp-mobile-s) {
+      @content;
+    }
+  } @else if $breakpoint == mobile {
+    @media (max-width: var.$bp-mobile) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: var.$bp-tablet) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-md {
+    @media (max-width: var.$bp-desktop-md) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-lg {
+    @media (max-width: var.$bp-desktop-lg) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-xl {
+    @media (max-width: var.$bp-desktop-xl) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-xxl {
+    @media (max-width: var.$bp-desktop-xxl) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-4k {
+    @media (max-width: var.$bp-desktop-4k) {
+      @content;
+    }
+  }
+}

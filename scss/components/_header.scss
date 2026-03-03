@@ -1,0 +1,161 @@
+// 헤더 컴포넌트 스타일
+@use "../base/variables" as var; // variables를 불러오고 var라는 네임스페이스 지정
+@use "../base/mixins" as mix;
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 9999;
+  height: 100px;
+  _font-family: var.$font-base;
+  vertical-align: middle;
+  color: #fff;
+
+  &__mobile {
+    display: none;
+  }
+
+  &__headerPc {
+    display: flex;
+    // grid-template-columns: 1fr 2fr 1fr; /* 총합 = 4fr */
+    // gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 40px 0;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  &__pcLogo {
+    width: 80px;
+    height: 80px;
+    display: block;
+    background: url(../images/Benz_logo.png) no-repeat;
+    background-size: cover;
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+
+      li {
+        _color: var.$color-secondary;
+        _opacity: 0.8;
+        // color: var.$color-primary;
+        align-items: center;
+        transition: opacity 0.3s ease, color 0.3s ease;
+        margin-left: 50px;
+        // color: rgba(255, 255, 255, 0.8);
+
+        // &:first-of-type {
+        //   margin-left: 0;
+        // }
+
+        &:hover {
+          opacity: 1;
+
+          transition: all 0.5s ease;
+          color: rgba(255, 255, 255, 1);
+        }
+      }
+    }
+  }
+
+  &__util {
+    display: flex;
+    gap: 50px;
+    _color: var.$color-secondary;
+    align-items: center;
+    // color: rgba(255, 255, 255, 0.8);
+
+    li {
+      &:hover {
+        transition: all 0.5s ease;
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+
+  // 스크롤 시 (헤더 컬러 바뀌는 구간)
+  &.fix {
+    background-color: rgba(255, 255, 255, 0); /* 투명 */
+    border-bottom: none;
+    color: #fff;
+
+    // sec04 구간 전용
+    &.ms {
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+      color: #222;
+
+      .header__headerPc {
+        padding: 15px 0;
+      }
+      #menuToggle span {
+        background-color: #222;
+      }
+    }
+  }
+
+  // 1200px
+  @include mix.respond(desktop-md) {
+  }
+
+  // 1024px
+  @include mix.respond(tablet) {
+  }
+
+  // 767px
+  @include mix.respond(mobile) {
+    &__headerPc {
+      display: none; // 기본 숨김
+    }
+
+    &__mobile {
+      display: block;
+
+      // padding: 30px 20px;
+    }
+
+    &__mobileIn {
+      // font-size: 16px;
+      padding: 20px;
+    }
+
+    &__mLogo {
+      width: 80px;
+      height: 80px;
+      display: block;
+      background: url(../images/Benz_logo.png) no-repeat;
+      background-size: cover;
+      cursor: pointer;
+    }
+
+    &__mobileIn {
+      display: flex;
+      justify-content: space-between;
+      // grid-template-columns: repeat(1, auto);
+      // grid-template-columns: 2fr auto auto;
+      align-items: center;
+      font-size: 18px;
+    }
+
+    &__Mutil {
+      display: flex;
+      align-items: center;
+
+      li {
+        margin-right: 20px;
+      }
+      li:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

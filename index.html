@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benz</title>
+
+    <!-- 컴파일된 CSS 연결 -->
+    <!-- <link rel="stylesheet" href="./css/base.css" /> -->
+    <link rel="stylesheet" href="./css/main.css" />
+
+    
+
+
+    <!-- JS 연결 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- GSAP 본체 -->
+    <!-- <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+
+    <!-- ScrollTrigger 플러그인 -->
+    <!-- <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
+    <!--swiper-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css"> -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<!-- <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css">
+ -->
+
+
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/ScrollTrigger.js"></script>
+    <script type="text/javascript" src="./js/models.js"></script>
+    <script type="text/javascript" src="./js/history.js"></script>
+    <script type="text/javascript" src="./js/cursor.js"></script>
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/947294c646.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Font Awesome CDN -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--헤더-->
+    <header id="header" class="header">
+      <!--PC-->
+      <div class="header__headerPc w18">
+        <h1 class="header__pcLogo">
+          <a href="/index.html"></a>
+        </h1>
+
+        <nav class="header__nav">
+          <ul>
+            <li class="header__nav-item"><a href="#">Models</a></li>
+            <li class="header__nav-item"><a href="#">Buy Online</a></li>
+            <li class="header__nav-item"><a href="#">Service</a></li>
+            <li class="header__nav-item"><a href="#">Brand & News</a></li>
+            <li class="header__nav-item"><a href="#">Catalogues</a></li>
+          </ul>
+        </nav>
+
+        <ul class="header__util">
+          <li class="active search"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+          <li class="star"><a href="#">★</a></li>
+          <li class="login"><a href="#">login</a></li>
+        </ul>
+      </div>
+
+      <!--모바일-->
+      <div class="header__mobile">
+        <div class="header__mobileIn">
+          <nav role="header__navigation">
+            <div id="menuToggle" class="header__menuToggle">
+              <input type="checkbox" class="line3" />
+              <span></span>
+              <span></span>
+              <span></span>
+
+              <ul id="menu" class="header__Mmenu">
+                <!-- <div class="header__Mutil">
+                  <ul class="header__Mlogin login">
+                    <li><a href="#">Login</a></li>
+                  </ul>
+                  <ul class="header__shop Mshop">
+                    <li><a href="#">shop</a></li>
+                    <li class="icon">
+                      <a href="#">
+                        <i class="fa-sharp fa-solid fa-cart-shopping"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div> -->
+
+                <!-- <div id="cssmenu" class="header__navMenu"> -->
+                <ul id="cssmenu">
+                  <li class="has-sub">
+                    <a href="#">Models</a>
+                  </li>
+                  <li class="has-sub">
+                    <a href="#">Buy Online</a>
+                  </li>
+                  <li class="has-sub"><a href="#">Service</a></li>
+                  <li class="has-sub"><a href="#">Brand & News</a></li>
+                  <li class="has-sub"><a href="#">Catalogues</a></li>
+                </ul>
+                <!-- </div> -->
+              </ul>
+            </div>
+          </nav>
+
+          <h1 class="header__mLogo">
+            <a href="/index.html"></a>
+          </h1>
+
+          <div class="header__util m_util">
+            <ul class="header__Mutil">
+              <li class="star"><a href="#">★</a></li>
+              <li class="login"><a href="#">login</a></li>
+            </ul>
+            <!-- <ul class="header__shop">
+              <li><a href="#">shop</a></li>
+              <li class="icon">
+                <a href="#">
+                  <i class="fa-sharp fa-solid fa-cart-shopping"></i
+                ></a>
+              </li>
+            </ul> -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="container" class="container">
+      <!--메인 비주얼-->
+      <section class="main_visual sec01">
+        <div
+          style="
+            --swiper-navigation-color: #fff;
+            --swiper-pagination-color: #fff;
+          "
+          class="swiper mvSwiper"
+        >
+          <div class="swiper-wrapper mvWrap">
+            <div class="swiper-slide">
+              <!--첫번째-->
+              <img src="./images/mv_3.jpg" />
+
+              <div class="mv_title">
+                <p>
+                  Timeless Sophistication Meets<br />
+                  Modern Refinement
+                </p>
+              </div>
+              <div class="more_btn main_btn">
+                <a> MORE </a>
+              </div>
+
+            </div>
+            <!--두번째-->
+            <div class="swiper-slide">
+              <img src="./images/mv_2.jpg" />
+              <!-- <img src="https://swiperjs.com/demos/images/nature-3.jpg" /> -->
+              <div class="mv_title">
+                <p>
+                  Timeless Sophistication Meets<br />
+                  Modern Refinement
+                </p>
+              </div>
+              <div class="more_btn main_btn">
+                <a> MORE </a>
+              </div>
+            </div>
+            <!--세번째-->
+            <div class="swiper-slide">
+              <img src="./images/mv_4.png" />
+              <div class="mv_title">
+                <p>
+                  Timeless Sophistication Meets<br />
+                  Modern Refinement
+                </p>
+              </div>
+              <div class="more_btn main_btn">
+                <a> MORE </a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+
+        <!--thumbsSlider-->
+        <div thumbsSlider="" class="swiper thumbSwiper w18">
+          <div class="swiper-wrapper thumbsWrap">
+            <!--첫번째-->
+            <div class="swiper-slide">
+              <!-- <img src="https://swiperjs.com/demos/images/nature-3.jpg" /> -->
+              <img src="./images/mv_3.jpg" />
+            </div>
+            <!--두번째-->
+            <div class="swiper-slide">
+              <img src="./images/mv_2.jpg" />
+            </div>
+            <!--세번째-->
+            <div class="swiper-slide">
+              <img src="./images/mv_4.png" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--sec02 히스토리-->
+      <section class="sec02">
+        <div class="title">
+          <h2>The history of Mercedes-Benz</h2>
+          <p>People, milestones, motorsport.</p>
+        </div>
+        <div class="circle_box">
+          <div class="circle_area">
+            <div class="circle_logo"></div>
+          </div>
+        </div>
+
+        <div class="sub_title">
+          <p>
+            메르세데스-벤츠는 시대를 초월한 디자인, 최첨단 기술과<br />
+            디테일에 대한 관심을 바탕으로 한 흥미로운 경험을 의미합니다.
+          </p>
+        </div>
+      </section>
+
+      <!--sec03 히스토리 슬라이더 -->
+      <section class="sec03">
+        <div class="title">
+          <p>
+            자동차의 시작,<br />
+            138년의 혁신
+          </p>
+        </div>
+        <div class="sub_title">
+          <p>
+            138년간의 개척 정신과 혁신을 이어 받아 순수 전기 시대를 선도하는<br />
+            메르세데스-벤츠는 단순 이동 수단이 아닌 그 이상을 제공합니다.<br />
+            최첨단 기술 덕분에 모바일 오피스, 안전한 공간, 프라이빗한 영화관
+            등이<br />
+            한 공간에서 만나 당신의 모든 니즈를 충족시킵니다.
+          </p>
+        </div>
+
+        <!--history_slider-->
+        <div class="history_slider w16">
+          <div class="historySlider">
+            <div class="swiper-wrapper drag__area">
+              <!-- <div class="swiper-slide slide_1">
+                <div class="history_txt">
+                  <h2 class="year on">1950</h2>
+                  <p>
+                    The Legend<br />
+                    Begins
+                  </p>
+                </div>
+              </div>
+              -->
+            </div>
+          </div>
+          <div class="cursor-dragPointer"><span class="neue">Drag</span></div>
+        </div>
+
+        <div class="history_btn more_btn">
+          <a> MORE </a>
+        </div>
+      </section>
+
+      <!--Our Models-->
+      <section class="sec04">
+        <div class="models model-top">
+          <div class="title">
+            <h2>Our Models</h2>
+          </div>
+
+          <div class="slide-area">
+            <!-- 버튼 리스트는 JS로 동적 생성 가능 -->
+            <ul class="modeList">
+              <!-- <li class="on"><button type="button">Sedan</button></li>
+              <li><button type="button">SUV</button></li>
+              <li><button type="button">Hatchback</button></li>
+              <li><button type="button">Coupé</button></li>
+              <li><button type="button">Cabriot & <br> Roadster</button></li> -->
+            </ul>
+
+            <!-- 슬라이더 영역 -->
+            <div class="model-slider">
+              <div class="swiper-wrapper">
+                <!-- JS에서 슬라이드 생성 -->
+              </div>
+              <div class="pagination"></div>
+              <div class="button-prev prevPointer"></div>
+              <div class="button-next nextPointer"></div>
+            </div>
+
+
+
+          <!-- <div class="slide-area">
+            <ul class="modeList">
+              <li class="on"><button type="button">Sedan</button></li>
+              <li><button type="button">SUV</button></li>
+              <li><button type="button">Hatchback</button></li>
+              <li><button type="button">Coupé</button></li>
+              <li><button type="button">Cabriot & <br> Roadster</button></li>
+            </ul>
+
+            <div class="model-slider">
+              <div class="swiper-wrapper">
+                슬라이더 1
+                <div class="swiper-slide">
+                  <div class="img-area">
+                    <div class="imgwrap">
+                      <img src="./images/sclass.png" alt="" />
+                    </div>
+                  </div>
+
+                  <div class="text-box">
+                    <dl class="bigTitle">
+                      <dt class="">S</dt>
+                      <dd class="">Class</dd>
+                    </dl>
+                    <dl>
+                      <dt class="big">9.9km/L[1]</dt>
+                      <dd>복합연비</dd>
+                    </dl>
+                    <dl>
+                      <dd class="small">제로백</dd>
+                      <dt class="big">5.0s</dt>
+                      <dd class="small">0에서 100 km/h 가속</dd>
+                    </dl>
+                    <dl>
+                      <dt class="big">381 / 5,800-6,100</dt>
+                      <dd>최고출력(ps/rpm)</dd>
+                    </dl>
+                    <dl>
+                      <dd>최대</dd>
+                      <dt class="big">250 km/h</dt>
+                      <dd>최고 속도</dd>
+                    </dl>
+                    
+                  </div>
+                </div>
+
+              <div class="pagination"></div>
+		      		<div class="button-prev button prevPointer"></div>
+		      		<div class="button-next button nextPointer"></div>
+            </div>
+          </div> -->
+        </div>
+
+        <div class="model-bottom">
+          <div class="model-custom">
+            <div class="custom_box">
+              <a>
+                <h2 class="icon icon_1">내 차량만들기</h2>
+                <p>당신의 M-AMG A-Class 를 만들어 보세요.</p>
+              </a>
+            </div>
+            <div class="custom_box">
+              <a>
+                <h2 class="icon icon_2">메르세데스-벤츠 스토어</h2>
+                <p>공식 온라인 스토어에서 차량을 구매해보세요.</p>
+              </a>
+            </div>
+            <div class="custom_box">
+              <a>
+                <h2 class="icon icon_3">시승 및 구매 상담</h2>
+                <p>온라인으로 시승을 예약해보세요.</p>
+              </a>
+            </div>
+            <div class="custom_box">
+              <a>
+                <h2 class="icon icon_4">프로모션</h2>
+                <p>내게 맞는 차량 금융 프로그램을 알아보세요.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Services-->
+      <section class="sec05">
+        <div>
+          <div class="title"><h2>Mercedes-Benz</h2></div>
+          <div class="ServiceWrap">
+            <div class="link_box">
+              <h2 class="mb-40">Services</h2>
+              <p class="mb-20">정비, 수리, 보증, 서비스 안내 및 서비스 상품 등<br> Mercedes-Benz 차량을 최상의 상태로 유지할 수 있는<br> 모든 서비스를 만나보세요.</p>
+              <div class="link_btn">
+                <a>온라인 서비스 예약</a>
+              </div>
+            </div>
+            <div class="link_box">
+              <h2 class="mb-40">Mercedes me Connect</h2>
+              <p class="mb-20">Mercedes-Benz<br> 계정을 등록하고<br> 최신 소식을 받아보세요.</p>  
+              <div class="link_btn">
+                <a>회원 가입하고 소식 받기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!--푸터-->
+      <footer id="footer">
+        <div class="ft_menu">
+          <ul>
+            <li class="title_menu mb-50"><a>Models</a></li>
+            <li><a>Buy Online</a></li>
+            <li><a>Buying Guide</a></li>
+            <li><a>Services</a></li>
+            <li><a>Brand</a></li>
+          </ul>
+          <ul>
+            <li class="title_menu mb-50"><a>Buy Online</a></li>
+            <li><a>메르세데스-벤츠 스토어</a></li>
+            <li><a>온라인 라이브 상담</a></li>
+            <li><a>인증 중고차 스토어</a></li>
+            <li><a>인증 중고차 소개</a></li>
+          </ul>
+          <ul>
+            <li class="title_menu mb-50"><a>Buying Guide</a></li>
+            <li><a>금융 상품 안내</a></li>
+            <li><a>온라인 구매 가이드</a></li>
+            <li><a>전시장 찾기</a></li>
+            <li><a>카탈로그</a></li>
+            <li><a>가격표</a></li>
+          </ul>
+          <ul>
+            <li class="title_menu mb-50"><a>Services</a></li>
+            <li><a>온라인 서비스 예약</a></li>
+            <li><a>서비스 상품 안내</a></li>
+            <li><a>긴급 출동 서비스</a></li>
+            <li><a>사용 설명서</a></li>
+            <li><a>보증 서비스</a></li>
+            <li><a>서비스 센터 찾기</a></li>
+          </ul>
+          <ul>
+            <li class="title_menu mb-50"><a>Brand</a></li>
+            <li><a>히스토리 & 브랜드</a></li>
+            <li><a>Buying Guide</a></li>
+            <li><a>뉴스 & 이벤트</a></li>
+            <li><a>고객센터</a></li>
+          </ul>
+        </div>
+        <div class="f_bar"></div>
+        <div class="ft_info">
+          <ul class="info_txt">
+            <li>메르세데스-벤츠 코리아㈜ 서울특별시 중구 한강대로 416 서울 스퀘어 9층 (우) 04637</li>
+            <li>대표자 성명 : VAITL MATHIAS ALEXANDER</li>
+            <li>사업자 등록번호: 220-86-46545</li>
+            <li>호스팅서비스 제공자: Amazon Web Services, Inc.</li>
+            
+          </ul>
+          <ul class="info_txt  mb-50">
+            <li>고객 컨택 센터 : 경기도 부천시 원미구 부일로 223 투나 8층 (우) 14623 </li>
+            <li>전화: 080-001-1886 </li>
+            <li>이메일 : mbk_cs@mercedes-benz.com</li> 
+          </ul>
+          <ul class="copy mb-50">
+            <li>©2025 메르세데스-벤츠 코리아(주) / 메르세데스-벤츠 파이낸셜 서비스 코리아(주) / 메르세데스-벤츠 모빌리티 코리아(주)</li>
+          </ul>
+          <ul class="policy mb-80">
+            <li><a>공급자</a></li>
+            <li><a>개인정보처리방침</a></li>
+            <li><a>법적 고지</a></li>
+            <li><a>쿠키설정</a></li>
+            <li><a>온라인 세일즈 이용약관</a></li>
+            <li><a>딜러사 정보 </a></li>
+            <li><a>위치정보사업 이용약관</a></li>
+          </ul>
+        </div>
+        <div class="f_logo"></div>
+      </footer>
+
+    </div>
+  </body>
+</html>

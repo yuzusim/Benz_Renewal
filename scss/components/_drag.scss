@@ -1,0 +1,36 @@
+/* cursor style */
+/* .drag__area{cursor: none;} */
+.drag__area {
+  cursor: none;
+}
+.click__area {
+  cursor: none;
+}
+.cursor-dragPointer {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  user-select: none;
+  pointer-events: none;
+  z-index: 99999999999;
+  color: #222;
+  text-align: center;
+  font-size: 16px;
+  line-height: 72px;
+  font-weight: 500;
+  opacity: 0;
+  touch-action: none;
+  pointer-events: none;
+  transform: rotate(-360deg) scale(0);
+}
+/* .cursor-clickPointer{position: fixed; background-color:  rgba(255,255,255,0.5); width: 100rem; height: 100rem; border-radius: 50%; transition:transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275); user-select: none; pointer-events: none; z-index: 99999999999; color: var(--ci-color); text-align: center; font-size: 13rem; line-height: 99rem; font-weight: 600; opacity: 0; border: 1px solid var(--ci-color); transform: rotate(-360deg) scale(0); touch-action: none; pointer-events: none;} */
+/* .cursor-playPointer{position: fixed; background-color:  rgba(255,255,255,0.5); width: 100rem; height: 100rem; border-radius: 50%; transition:transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275); user-select: none; pointer-events: none; z-index: 99999999999; color: var(--ci-color); text-align: center; font-size: 13rem; line-height: 99rem; font-weight: 600; opacity: 0; border: 1px solid var(--ci-color); transform: rotate(-360deg) scale(0);; touch-action: none; pointer-events: none;} */
+.cursor-dragPointer.active {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+}
+/* .cursor-clickPointer.active {transform: rotate(0deg) scale(1); opacity: 1;}  */
+/* .cursor-playPointer.active {transform: rotate(0deg) scale(1); opacity: 1;}  */
